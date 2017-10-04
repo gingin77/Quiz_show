@@ -33,13 +33,11 @@ class QuizzesController < ApplicationController
   end
 
   def play
-    # I'm thinking we'll set up a route for like /quiz/:id/play that comes here?
-    # so that from the dashboard, when a user clicks on a quiz they want to play
-    # they come here... the quiz is "href'd to /quiz/:id/play?"
-    @quiz = Quiz.find(params [:id])
+    @quiz = Quiz.find(params[:id])
+    @answer_array = []
     session[:quiz_total] = 0
-    @user = User.find(session[:user_id])
-
+    # @user = User.find(session[:user_id])
+    render 'play'
     Quizzes_users.create(user_id: @user.id, quiz_id: @quiz.id, score: session[:quiz_total])
   end
 

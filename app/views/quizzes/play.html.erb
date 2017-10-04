@@ -1,25 +1,26 @@
 
-<%= form_for @quiz url: 'quizzes/:id/postplay', local: true do |form| %>
-
+<%= form_for @quiz, :url => {:action => "postplay"} do |form|%>
+  byebug
 <%= @quiz.questions.each do |question| %>
-<%=  @answer_array << [question.correct_answer, question.answer2, question.answer3, question.answer4] %>
-<%=  @answer_array.shuffle! %>
+<%= @answer_array << question.correct_answer << question.answer2 << question.answer3 << question.answer4 %>
+<%= @answer_array.shuffle! %>
 
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <!-- <%= form.label :title %><br> -->
+    <h3> <%= question.title %>  </h3>
   </p>
 
-  <%= radio_button_tag(:answer) %>
+  <%= radio_button_tag(:answer, 1) %>
   <%= label_tag(:answer_1, @answer_array[1]) %>
-  <%= radio_button_tag(:answer) %>
+  <%= radio_button_tag(:answer, 2) %>
   <%= label_tag(:answer_2, @answer_array[2]) %>
-  <%= radio_button_tag(:answer) %>
+  <%= radio_button_tag(:answer, 3) %>
   <%= label_tag(:answer_3, @answer_array[3]) %>
-  <%= radio_button_tag(:answer) %>
+  <%= radio_button_tag(:answer, 4) %>
   <%= label_tag(:answer_4, @answer_array[4]) %>
 
   <p>
     <%= form.submit %>
   </p>
+  <% end %>
 <% end %>
