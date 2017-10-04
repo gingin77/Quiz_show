@@ -1,0 +1,25 @@
+
+<%= form_for @quiz url: 'quizzes/:id/postplay', local: true do |form| %>
+
+<%= @quiz.questions.each do |question| %>
+<%=  @answer_array << [question.correct_answer, question.answer2, question.answer3, question.answer4] %>
+<%=  @answer_array.shuffle! %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <%= radio_button_tag(:answer) %>
+  <%= label_tag(:answer_1, @answer_array[1]) %>
+  <%= radio_button_tag(:answer) %>
+  <%= label_tag(:answer_2, @answer_array[2]) %>
+  <%= radio_button_tag(:answer) %>
+  <%= label_tag(:answer_3, @answer_array[3]) %>
+  <%= radio_button_tag(:answer) %>
+  <%= label_tag(:answer_4, @answer_array[4]) %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
