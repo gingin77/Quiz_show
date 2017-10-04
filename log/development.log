@@ -115,9 +115,9 @@ Completed 200 OK in 21ms (Views: 11.8ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/favicon.ico" for 127.0.0.1 at 2017-10-04 05:55:54 -0400
-  
+
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
-  
+
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -146,9 +146,9 @@ puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/questions/new" for 127.0.0.1 at 2017-10-04 05:55:59 -0400
-  
+
 ActionController::RoutingError (No route matches [GET] "/questions/new"):
-  
+
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -183,25 +183,25 @@ Processing by QuizzesController#index as HTML
 Completed 500 Internal Server Error in 12ms
 
 
-  
+
 ActionView::Template::Error (undefined method `each' for nil:NilClass):
     13:    <th colspan="2"></th>
     14:  </tr>
-    15: 
+    15:
     16:  <% @quizzes.each do |quiz| %>
     17:    <tr>
     18:      <td><%= quiz.title %></td>
     19:      <!-- <td><%= book.author %></td> -->
-  
+
 app/views/quizzes/index.html.erb:16:in `_app_views_quizzes_index_html_erb__574054521062325173_70306250497140'
 Started GET "/quizzes" for 127.0.0.1 at 2017-10-04 06:12:37 -0400
 Processing by QuizzesController#index as HTML
 Completed 500 Internal Server Error in 1ms
 
 
-  
+
 NameError (uninitialized constant QuizzesController::Book):
-  
+
 app/controllers/quizzes_controller.rb:4:in `index'
 Started GET "/quizzes" for 127.0.0.1 at 2017-10-04 06:12:59 -0400
 Processing by QuizzesController#index as HTML
@@ -211,16 +211,16 @@ Processing by QuizzesController#index as HTML
 Completed 500 Internal Server Error in 1121ms (ActiveRecord: 0.9ms)
 
 
-  
+
 ActionView::Template::Error (require_tree argument must be a directory):
     4:     <title>QuizShow</title>
     5:     <%= csrf_meta_tags %>
-    6: 
+    6:
     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     9:   </head>
-   10: 
-  
+   10:
+
 app/assets/javascripts/cable.js:6
 app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3335460955812424752_70306252462800'
 Started GET "/quizzes" for 127.0.0.1 at 2017-10-04 06:14:00 -0400
@@ -232,16 +232,16 @@ Processing by QuizzesController#index as HTML
 Completed 500 Internal Server Error in 183ms (ActiveRecord: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (require_tree argument must be a directory):
     4:     <title>QuizShow</title>
     5:     <%= csrf_meta_tags %>
-    6: 
+    6:
     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     9:   </head>
-   10: 
-  
+   10:
+
 app/assets/javascripts/cable.js:6
 app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1508803761273865664_70360531321800'
 Started GET "/quizzes" for 127.0.0.1 at 2017-10-04 06:18:03 -0400
@@ -279,17 +279,17 @@ Processing by QuizzesController#show as HTML
 Completed 500 Internal Server Error in 207ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0x007ffc2daa7ba8>:0x007ffc35031e00>
 Did you mean?  current_page?):
     13:   <%= @quiz.description %>
     14: </p>
-    15: 
+    15:
     16: <!-- <% if current_user.email === @quiz.author.email %> -->
     17: <%= link_to 'Edit', edit_quiz_path %>
     18: <!-- <% end %> -->
     19: <%= link_to 'Back', quizzes_path %>
-  
+
 app/views/quizzes/show.html.erb:16:in `_app_views_quizzes_show_html_erb__3943639940925832274_70360598942720'
 Started GET "/quizzes/1" for 127.0.0.1 at 2017-10-04 06:20:12 -0400
 Processing by QuizzesController#show as HTML
@@ -308,16 +308,16 @@ Processing by QuizzesController#index as HTML
 Completed 500 Internal Server Error in 228ms (ActiveRecord: 1.3ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `book' for #<#<Class:0x007ffc34ba96a8>:0x007ffc34ba39b0>):
     16:  <% @quizzes.each do |quiz| %>
     17:    <tr>
     18:      <td><%= quiz.title %></td>
     19:      <!-- <td><%= book.author %></td> -->
     20:      <td><%= quiz.description %></td>
-    21: 
+    21:
     22:      <td><%= link_to 'Show', quiz_path(quiz) %></td>
-  
+
 app/views/quizzes/index.html.erb:19:in `block in _app_views_quizzes_index_html_erb__802822942040790603_70360596565920'
 app/views/quizzes/index.html.erb:16:in `_app_views_quizzes_index_html_erb__802822942040790603_70360596565920'
 Started GET "/quizzes" for 127.0.0.1 at 2017-10-04 06:22:00 -0400
@@ -381,16 +381,16 @@ Processing by QuizzesController#show as HTML
 Completed 500 Internal Server Error in 193ms (ActiveRecord: 0.7ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `quizquestions_path' for #<#<Class:0x007ffc34ba96a8>:0x007ffc3239f1d0>
 Did you mean?  quiz_questions_path
                quiz_question_path
                quiz_questions_url):
-    42: 
+    42:
     43: <%= link_to 'Edit', edit_quiz_path %>
     44: <%= link_to 'Back', quizzes_path %>
     45: <%= link_to 'New Question', quizquestions_path %>
-  
+
 app/views/quizzes/show.html.erb:45:in `_app_views_quizzes_show_html_erb__3943639940925832274_70360575573460'
 Started GET "/quizzes/1" for 127.0.0.1 at 2017-10-04 06:43:18 -0400
 Processing by QuizzesController#show as HTML
@@ -402,16 +402,16 @@ Processing by QuizzesController#show as HTML
 Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `quizquestions_path' for #<#<Class:0x007ffc34ba96a8>:0x007ffc349a2918>
 Did you mean?  quiz_questions_path
                quiz_question_path
                quiz_questions_url):
-    42: 
+    42:
     43: <%= link_to 'Edit', edit_quiz_path %>
     44: <%= link_to 'Back', quizzes_path %>
     45: <%= link_to 'New Question', quizquestions_path %>
-  
+
 app/views/quizzes/show.html.erb:45:in `_app_views_quizzes_show_html_erb__3943639940925832274_70360595513640'
 Started GET "/quizzes/1" for 127.0.0.1 at 2017-10-04 06:43:41 -0400
 Processing by QuizzesController#show as HTML
@@ -423,13 +423,13 @@ Processing by QuizzesController#show as HTML
 Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (No route matches {:action=>"index", :controller=>"questions", :id=>"1"}, missing required keys: [:quiz_id]):
-    42: 
+    42:
     43: <%= link_to 'Edit', edit_quiz_path %>
     44: <%= link_to 'Back', quizzes_path %>
     45: <%= link_to 'New Question', quiz_questions_path %>
-  
+
 app/views/quizzes/show.html.erb:45:in `_app_views_quizzes_show_html_erb__3943639940925832274_70360582486460'
 Started GET "/quizzes/1" for 127.0.0.1 at 2017-10-04 06:45:26 -0400
 Processing by QuizzesController#show as HTML
@@ -441,14 +441,14 @@ Processing by QuizzesController#show as HTML
 Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `quiz' for #<#<Class:0x007ffc34ba96a8>:0x007ffc349220d8>
 Did you mean?  @quiz):
-    42: 
+    42:
     43: <%= link_to 'Edit', edit_quiz_path %>
     44: <%= link_to 'Back', quizzes_path %>
     45: <%= link_to 'New Question', quiz_questions_path(quiz) %>
-  
+
 app/views/quizzes/show.html.erb:45:in `_app_views_quizzes_show_html_erb__3943639940925832274_70360595242140'
 Started GET "/quizzes/1" for 127.0.0.1 at 2017-10-04 06:45:41 -0400
 Processing by QuizzesController#show as HTML
@@ -461,9 +461,9 @@ Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.2ms)
 
 
 Started GET "/quizzes/1/questions" for 127.0.0.1 at 2017-10-04 06:45:53 -0400
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for QuestionsController):
-  
+
 actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
@@ -530,16 +530,16 @@ Processing by QuestionsController#new as HTML
 Completed 500 Internal Server Error in 187ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `questions_path' for #<#<Class:0x007ffc2dec5f50>:0x007ffc2dec4308>
 Did you mean?  quiz_questions_path):
     1: <h1>New Question</h1>
-    2: 
+    2:
     3: <%= form_with scope: :question, url: questions_path, local: true do |form| %>
     4:   <p>
     5:     <%= form.label :title %><br>
     6:     <%= form.text_field :title %>
-  
+
 app/views/questions/new.html.erb:3:in `_app_views_questions_new_html_erb__1777295432110260364_70360539476980'
 Started GET "/quizzes/1/questions/new" for 127.0.0.1 at 2017-10-04 06:47:39 -0400
 Processing by QuestionsController#new as HTML
@@ -550,9 +550,9 @@ Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.0ms)
 
 
 Started POST "/quizzes/1/questions" for 127.0.0.1 at 2017-10-04 06:48:03 -0400
-  
+
 AbstractController::ActionNotFound (The action 'create' could not be found for QuestionsController):
-  
+
 actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
@@ -607,23 +607,23 @@ Processing by QuestionsController#create as HTML
 Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms)
 
 
-  
+
 NoMethodError (undefined method `save' for nil:NilClass):
-  
+
 app/controllers/questions_controller.rb:18:in `create'
 Started POST "/quizzes/1/questions" for 127.0.0.1 at 2017-10-04 06:50:37 -0400
 Processing by QuestionsController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"fh7P42SQ3V4LScLAyu3b2TDmgr4qE3zOoftQzJOzIRwSh5Z8u06ATj3JZU4x1LpguD4EhoUmXe682wYXdrylyA==", "question"=>{"title"=>"What is your favorite color?", "correct_answer"=>"blue", "answer2"=>"red", "answer3"=>"green", "answer4"=>"yellow"}, "commit"=>"Save Question", "quiz_id"=>"1"}
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
-Redirected to 
+Redirected to
 Completed 500 Internal Server Error in 123ms (ActiveRecord: 1.0ms)
 
 
-  
+
 NoMethodError (undefined method `questions_url' for #<QuestionsController:0x007ffc2d853988>
 Did you mean?  quiz_questions_url):
-  
+
 app/controllers/questions_controller.rb:19:in `create'
 Started POST "/quizzes/1/questions" for 127.0.0.1 at 2017-10-04 06:51:31 -0400
 Processing by QuestionsController#create as HTML
@@ -640,14 +640,14 @@ Processing by QuestionsController#index as HTML
 Completed 406 Not Acceptable in 59ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::UnknownFormat (QuestionsController#index is missing a template for this request format and variant.
 
 request.formats: ["text/html"]
 request.variant: []
 
 NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
-  
+
 actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
 actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
 actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
@@ -718,13 +718,13 @@ Processing by QuestionsController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"fh7P42SQ3V4LScLAyu3b2TDmgr4qE3zOoftQzJOzIRwSh5Z8u06ATj3JZU4x1LpguD4EhoUmXe682wYXdrylyA==", "question"=>{"title"=>"What is your favorite color?", "correct_answer"=>"blue", "answer2"=>"red", "answer3"=>"green", "answer4"=>"yellow"}, "commit"=>"Save Question", "quiz_id"=>"1"}
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
-Redirected to 
+Redirected to
 Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.1ms)
 
 
-  
+
 ActionController::ActionControllerError (Cannot redirect to nil!):
-  
+
 app/controllers/questions_controller.rb:19:in `create'
 Started POST "/quizzes/1/questions" for 127.0.0.1 at 2017-10-04 06:55:42 -0400
 Processing by QuestionsController#create as HTML
@@ -734,9 +734,9 @@ Processing by QuestionsController#create as HTML
 Completed 500 Internal Server Error in 129ms (ActiveRecord: 1.4ms)
 
 
-  
+
 NameError (undefined local variable or method `quiz' for #<QuestionsController:0x007ffc323def10>):
-  
+
 app/controllers/questions_controller.rb:19:in `create'
 Started POST "/quizzes/1/questions" for 127.0.0.1 at 2017-10-04 06:56:55 -0400
 Processing by QuestionsController#create as HTML
@@ -747,9 +747,9 @@ Processing by QuestionsController#create as HTML
 Completed 404 Not Found in 29ms (ActiveRecord: 1.6ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Quiz with 'id'=):
-  
+
 app/controllers/questions_controller.rb:19:in `create'
 Started POST "/quizzes/1/questions" for 127.0.0.1 at 2017-10-04 06:58:15 -0400
 Processing by QuestionsController#create as HTML
@@ -760,9 +760,9 @@ Processing by QuestionsController#create as HTML
 Completed 404 Not Found in 23ms (ActiveRecord: 1.5ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Quiz with 'id'={:id=>nil}):
-  
+
 app/controllers/questions_controller.rb:19:in `create'
 Started POST "/quizzes/1/questions" for 127.0.0.1 at 2017-10-04 06:59:27 -0400
 Processing by QuestionsController#create as HTML
@@ -908,9 +908,9 @@ Processing by QuestionsController#create as HTML
 Completed 422 Unprocessable Entity in 8ms (ActiveRecord: 0.1ms)
 
 
-  
+
 ActiveRecord::RecordInvalid (Validation failed: Quiz must exist):
-  
+
 app/controllers/questions_controller.rb:17:in `create'
 Started POST "/quizzes/2/questions" for 127.0.0.1 at 2017-10-04 07:19:41 -0400
 Processing by QuestionsController#create as HTML
@@ -963,18 +963,18 @@ Processing by QuizzesController#show as HTML
 Completed 500 Internal Server Error in 132ms (ActiveRecord: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `edit_quiz_questions_path' for #<#<Class:0x007ffc34af8b78>:0x007ffc2ff1ee78>
 Did you mean?  edit_quiz_question_path
                edit_quiz_question_url):
-    31: 
+    31:
     32:      <td><%= link_to 'Show', quiz_questions_path(question) %></td>
-    33: 
+    33:
     34:      <td><%= link_to 'Edit', edit_quiz_questions_path(question) %></td>
     35:      <td><%= link_to 'Destroy', quiz_questions_path(question),
     36:              method: :delete,
     37:              data: { confirm: 'Are you sure?' } %></td>
-  
+
 app/views/quizzes/show.html.erb:34:in `block in _app_views_quizzes_show_html_erb__3943639940925832274_70360596204080'
 app/views/quizzes/show.html.erb:24:in `_app_views_quizzes_show_html_erb__3943639940925832274_70360596204080'
 Started GET "/quizzes/2" for 127.0.0.1 at 2017-10-04 07:23:51 -0400
@@ -1057,9 +1057,9 @@ Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.2ms)
 
 
 Started GET "/quizzes/1/edit" for 127.0.0.1 at 2017-10-04 07:25:34 -0400
-  
+
 AbstractController::ActionNotFound (The action 'edit' could not be found for QuizzesController):
-  
+
 actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
@@ -1118,9 +1118,9 @@ Completed 200 OK in 65ms (Views: 41.9ms | ActiveRecord: 0.9ms)
 
 
 Started PATCH "/quizzes/1" for 127.0.0.1 at 2017-10-04 07:27:57 -0400
-  
+
 AbstractController::ActionNotFound (The action 'update' could not be found for QuizzesController):
-  
+
 actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
@@ -1291,14 +1291,14 @@ Processing by QuestionsController#index as HTML
 Completed 406 Not Acceptable in 75ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::UnknownFormat (QuestionsController#index is missing a template for this request format and variant.
 
 request.formats: ["text/html"]
 request.variant: []
 
 NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
-  
+
 actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
 actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
 actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
@@ -1385,9 +1385,9 @@ Completed 200 OK in 52ms (Views: 35.1ms | ActiveRecord: 1.9ms)
 
 
 Started GET "/quizzes/2/questions/2/edit" for 127.0.0.1 at 2017-10-04 07:36:01 -0400
-  
+
 AbstractController::ActionNotFound (The action 'edit' could not be found for QuestionsController):
-  
+
 actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
@@ -1445,16 +1445,16 @@ Processing by QuestionsController#edit as HTML
 Completed 500 Internal Server Error in 116ms (ActiveRecord: 0.9ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `question_path' for #<#<Class:0x007ffc3232ef48>:0x007ffc3232cd38>
 Did you mean?  quizzes_path):
     1: <h1>Edit Question</h1>
-    2: 
+    2:
     3: <%= form_with model: @question, local: true do |form| %>
-    4: 
+    4:
     5:   <p>
     6:     <%= form.label :title %><br>
-  
+
 app/views/questions/edit.html.erb:3:in `_app_views_questions_edit_html_erb__2044351407684353053_70360575344360'
 Started GET "/quizzes/2/questions/2/edit" for 127.0.0.1 at 2017-10-04 07:42:34 -0400
 Processing by QuestionsController#edit as HTML
@@ -1466,9 +1466,9 @@ Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.2ms)
 
 
 Started PATCH "/quizzes/2/questions" for 127.0.0.1 at 2017-10-04 07:42:52 -0400
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/quizzes/2/questions"):
-  
+
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -1497,9 +1497,9 @@ puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started PATCH "/quizzes/2/questions" for 127.0.0.1 at 2017-10-04 07:43:52 -0400
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/quizzes/2/questions"):
-  
+
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -1528,9 +1528,9 @@ puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started PATCH "/quizzes/2/questions" for 127.0.0.1 at 2017-10-04 07:45:16 -0400
-  
+
 ActionController::RoutingError (No route matches [PATCH] "/quizzes/2/questions"):
-  
+
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -1675,9 +1675,9 @@ Completed 200 OK in 17ms (Views: 8.5ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/users" for 127.0.0.1 at 2017-10-04 12:10:22 -0400
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
-  
+
 actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
@@ -1734,15 +1734,15 @@ Processing by QuizzesController#index as HTML
 Completed 500 Internal Server Error in 311ms (ActiveRecord: 1.0ms)
 
 
-  
+
 ActionView::Template::Error (require_tree argument must be a directory):
     4:     <title>QuizShow</title>
     5:     <%= csrf_meta_tags %>
-    6: 
+    6:
     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     9:   </head>
-   10: 
-  
+   10:
+
 app/assets/javascripts/cable.js:6
 app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4480557547243676121_70291583637000'
