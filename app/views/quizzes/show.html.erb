@@ -1,0 +1,19 @@
+<p>
+  <strong>Title:</strong>
+  <%= @quiz.title %>
+</p>
+
+<!-- <p>
+  <strong>Author:</strong>
+  <%= @quiz.author %>
+</p> -->
+
+<p>
+  <strong>Description:</strong>
+  <%= @quiz.description %>
+</p>
+
+<!-- <% if current_user.email === @quiz.author.email %> -->
+<%= link_to 'Edit', edit_quiz_path %>
+<!-- <% end %> -->
+<%= link_to 'Back', quizzes_path %>

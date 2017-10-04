@@ -1,5 +1,9 @@
 class QuizzesController < ApplicationController
 
+  def index
+      @quizzes = Quiz.all
+    end
+
   def new
     @quiz = Quiz.new
   end
@@ -10,7 +14,7 @@ class QuizzesController < ApplicationController
 
   def create
     @quiz = Quiz.new(quiz_params)
-    # @quiz.user = User.find_by(id: session[:user_id])
+    # @quiz.author = User.find_by(id: session[:user_id])
     @quiz.save
     redirect_to @quiz
   end

@@ -1,0 +1,33 @@
+<h1>All Quizzes</h1>
+<br />
+<%= link_to 'New Quiz', new_quiz_path %>
+<br/>
+<br/>
+<br/>
+
+<table>
+ <tr>
+   <th>Title</th>
+   <th>Author</th>
+   <th>Description</th>
+   <th colspan="2"></th>
+ </tr>
+
+ <% @quizzes.each do |quiz| %>
+   <tr>
+     <td><%= quiz.title %></td>
+     <!-- <td><%= book.author %></td> -->
+     <td><%= quiz.description %></td>
+
+     <td><%= link_to 'Show', quiz_path(quiz) %></td>
+
+     <!-- <% if current_user.email === quiz.author.email %> -->
+     <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
+     <td><%= link_to 'Destroy', quiz_path(quiz),
+             method: :delete,
+             data: { confirm: 'Are you sure?' } %></td>
+     <!-- <% end %> -->
+
+   </tr>
+ <% end %>
+</table>
