@@ -1601,3 +1601,68 @@ Processing by QuizzesController#show as HTML
 Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/quizzes" for 127.0.0.1 at 2017-10-04 07:49:29 -0400
+Processing by QuizzesController#index as HTML
+  Rendering quizzes/index.html.erb within layouts/application
+  [1m[36mQuiz Load (0.3ms)[0m  [1m[34mSELECT "quizzes".* FROM "quizzes"[0m
+  Rendered quizzes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2017-10-04 10:17:40 -0400
+Processing by QuizzesController#new as HTML
+  Rendering quizzes/new.html.erb within layouts/application
+  Rendered quizzes/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/quizzes" for 127.0.0.1 at 2017-10-04 10:17:51 -0400
+Processing by QuizzesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ptwRQjlxBckf9pD3cyTezRXLsxZa6Mc1A0p4smi5RiFNJPbAwJn83kEAgdxpz26s3wufDkAfIY87wdLHjm4pXA==", "quiz"=>{"title"=>"new quiz!", "description"=>"this is the description!"}, "commit"=>"Save Quiz"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "quizzes" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "new quiz!"], ["description", "this is the description!"], ["created_at", "2017-10-04 14:17:51.442194"], ["updated_at", "2017-10-04 14:17:51.442194"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/quizzes/3
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/quizzes/3" for 127.0.0.1 at 2017-10-04 10:17:51 -0400
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 3]]
+  Rendered quizzes/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/quizzes/3/questions/new" for 127.0.0.1 at 2017-10-04 10:17:57 -0400
+Processing by QuestionsController#new as HTML
+  Parameters: {"quiz_id"=>"3"}
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/quizzes/3/questions" for 127.0.0.1 at 2017-10-04 10:18:24 -0400
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0AIHLbTckNHCPd5aTIAdN1lT7ew2doD3VmDhzRmLJDyCxIRmlC+rx9E8WbqRDou+fJF41hRz8UA3yJNawb1brw==", "question"=>{"title"=>"What's your favorite car?", "correct_answer"=>"pickup truck", "answer2"=>"bug", "answer3"=>"sedan", "answer4"=>"station wagon"}, "commit"=>"Save Question", "quiz_id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("title", "correct_answer", "answer2", "answer3", "answer4", "created_at", "updated_at", "quiz_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "What's your favorite car?"], ["correct_answer", "pickup truck"], ["answer2", "bug"], ["answer3", "sedan"], ["answer4", "station wagon"], ["created_at", "2017-10-04 14:18:24.779651"], ["updated_at", "2017-10-04 14:18:24.779651"], ["quiz_id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mQuiz Load (0.2ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/quizzes/3
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/quizzes/3" for 127.0.0.1 at 2017-10-04 10:18:24 -0400
+Processing by QuizzesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuiz Load (0.1ms)[0m  [1m[34mSELECT  "quizzes".* FROM "quizzes" WHERE "quizzes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering quizzes/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."quiz_id" = ?[0m  [["quiz_id", 3]]
+  Rendered quizzes/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 0.6ms)
+
+
